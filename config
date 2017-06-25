@@ -10,6 +10,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+set $alt Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -177,9 +178,11 @@ exec_always feh --bg-scale ~/.i3/wallpaper.jpg
 exec nmcli con up id vpn.ediweb.ru passwd-file /home/sah4ez/edisoft/cert_vpn/secret
 
 # Starting app
-exec firefox
-exec skypeforlinux
-exec yakyak
+exec --no-startup-id firefox
+exec --no-startup-id skypeforlinux
+exec --no-startup-id yakyak
+exec gnome-terminal
+exec "i3-msg workspace '5: Monitoring'; exec gnome-terminal -e ~/.i3/monitoring.sh"
 
 # Assign
 assign [class="Firefox"] $workspace2
@@ -193,4 +196,8 @@ assign [class="yakyak"] $workspace3
 # Volume
 bindsym $mod+m exec "pavucontrol"
 
+# Lock
 bindsym $mod+l exec "i3lock -i ~/.i3/wallpaper.png -p default -n"
+
+bindsym Mod1+Tab workspace next
+bindsym Mod1+Shift+Tab workspace prev
