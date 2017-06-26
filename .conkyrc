@@ -37,8 +37,8 @@ TEXT
 # JSON for i3bar
 [
  { "full_text" : "(${cpu cpu0}% ${cpu cpu1}% ${cpu cpu2}% ${cpu cpu3}%)${cpu}% " , "color" : ${if_match ${cpu}<33}"\#bcff75"${else}${if_match ${cpu}<70}"\#ffe554"${else}"\#f71111"${endif}${endif} },
- { "full_text" : " ${upspeed enp4s0}" , "color" : "\#fb23ff" },
- { "full_text" : " ${downspeed enp4s0}" , "color" : "\#fb23ff" },
+ { "full_text" : " ${upspeed enp4s0}:${totalup enp4s0}" , "color" : "\#fb23ff" },
+ { "full_text" : " ${downspeed enp4s0}:${totaldown enp4s0}" , "color" : "\#fb23ff" },
  { "full_text" : "IO ${diskio}" , "color" : "\#8819ff" },
  { "full_text" : "S ${entropy_avail}" , "color" : "\#afd30c" },
  #{ "full_text" : "/:${fs_free /}|home:${fs_free /home}|var:${fs_free /var}|usr:${fs_free /usr}" , "color" : "\#ffffff" },
