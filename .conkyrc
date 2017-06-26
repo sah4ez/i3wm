@@ -36,7 +36,7 @@ TEXT
 
 # JSON for i3bar
 [
- { "full_text" : "(${cpu cpu0}% ${cpu cpu1}% ${cpu cpu2}% ${cpu cpu3}%)${cpu}% " , "color" : "\#cea00a" },
+ { "full_text" : "(${cpu cpu0}% ${cpu cpu1}% ${cpu cpu2}% ${cpu cpu3}%)${cpu}% " , "color" : ${if_match ${cpu}<33}"\#bcff75"${else}${if_match ${cpu}<70}"\#ffe554"${else}"\#f71111"${endif}${endif} },
  { "full_text" : "IO ${diskio}" , "color" : "\#afd30c" },
  { "full_text" : "S ${entropy_avail}" , "color" : "\#afd30c" },
  #{ "full_text" : "/:${fs_free /}|home:${fs_free /home}|var:${fs_free /var}|usr:${fs_free /usr}" , "color" : "\#ffffff" },
@@ -45,6 +45,6 @@ TEXT
  { "full_text" : "var:${fs_free /var}" , "color" : "\#3dff91" },
  { "full_text" : "usr:${fs_free /usr}" , "color" : "\#3dff91" },
  { "full_text" : "SWAP ${swapperc}%" , "color" : ${if_match ${swapperc}<30}"\#ffffff"${else}${if_match ${swapperc}<60}"\#ffff3d"${else}"\#ff0000"${endif}${endif} },
- { "full_text" : " (${mem}/${memmax})${memperc}%" , "color" : ${if_match ${memperc}<30}"\#ffffff"${else}${if_match ${memperc}<60}"\#ffff3d"${else}"\#ff0000"${endif}${endif} },
+ { "full_text" : " (${mem}/${memmax})${memperc}%" , "color" : ${if_match ${memperc}<33}"\#ffffff"${else}${if_match ${memperc}<70}"\#ffff3d"${else}"\#ff0000"${endif}${endif} },
  { "full_text" : " ${time %d/%m/%Y  %H:%M:%S }" , "color" : "\#42f44b" }
 ],
