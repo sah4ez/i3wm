@@ -204,5 +204,9 @@ bindsym $mod+m exec "pavucontrol"
 # Lock
 bindsym $mod+l exec "i3lock -i ~/.i3/wallpaper.png -p default -n"
 
+# Navigation
 bindsym Mod1+Tab workspace next
 bindsym Mod1+Shift+Tab workspace prev
+
+# Navigator
+bindsym $mod+n exec "nautilus --no-desktop"
