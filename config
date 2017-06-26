@@ -96,7 +96,7 @@ bindsym $mod+a focus parent
 set $workspace1 "1: "
 set $workspace2 "2: Firefox"
 set $workspace3 "3: Messager"
-set $workspace4 "4: "
+set $workspace4 "4: Code"
 set $workspace5 "5: Monitoring"
 set $workspace6 "6: "
 set $workspace7 "7: "
@@ -164,7 +164,8 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+        #status_command  i3status --config ~/.i3/i3status.conf
+	status_command $HOME/.i3/conky-i3bar
         tray_output primary
 }
 
@@ -172,7 +173,7 @@ bar {
 exec --no-startup-id "setxkbmap -model pc105 -layout us,ru -option grp:alt_shift_toggle"
 
 # Wallpaper
-exec_always feh --bg-scale ~/.i3/wallpaper.jpg
+exec_always feh --bg-scale $HOME/.i3/wallpaper.jpg
 
 # VPN
 exec nmcli con up id vpn.ediweb.ru passwd-file /home/sah4ez/edisoft/cert_vpn/secret
@@ -181,14 +182,16 @@ exec nmcli con up id vpn.ediweb.ru passwd-file /home/sah4ez/edisoft/cert_vpn/sec
 exec --no-startup-id firefox
 exec --no-startup-id skypeforlinux
 exec --no-startup-id yakyak
+exec --no-startup-id $HOME/.opt/idea-IU/bin/idea.sh
 exec gnome-terminal
-exec "i3-msg workspace '5: Monitoring'; exec gnome-terminal -e ~/.i3/monitoring.sh"
-exec "i3-msg workspace '10: Docker'; exec gnome-terminal -e ~/.i3/docker-tools.sh"
+exec "i3-msg workspace '5: Monitoring'; exec gnome-terminal -e ~/.i3/monitoring.sh; workspace '10: Docker';"
+exec "i3-msg workspace '10: Docker'; exec gnome-terminal -e ~/.i3/docker-tools.sh;"
 
 # Assign
 assign [class="Firefox"] $workspace2
 assign [class="skypeforlinux"] $workspace3
 assign [class="yakyak"] $workspace3
+assign [class="jetbrains-idea"] $workspace4
 
 # Floating window
 #for_window [class="skypeforlinux"] floating enable
