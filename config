@@ -182,6 +182,7 @@ exec nmcli con up id vpn.ediweb.ru passwd-file /home/sah4ez/edisoft/cert_vpn/sec
 exec --no-startup-id firefox
 exec --no-startup-id skypeforlinux
 exec --no-startup-id yakyak
+exec --no-startup-id dunst -config $HOME/.i3/dunstrc
 exec --no-startup-id $HOME/.opt/idea-IU/bin/idea.sh
 exec gnome-terminal
 exec "i3-msg workspace '5: '; exec gnome-terminal -e ~/.i3/monitoring.sh; workspace '10: Docker';"
