@@ -185,7 +185,7 @@ exec --no-startup-id yakyak
 exec --no-startup-id dunst -config $HOME/.i3/dunstrc
 exec --no-startup-id $HOME/.opt/idea-IU/bin/idea.sh
 exec gnome-terminal
-exec "i3-msg workspace '5: '; exec gnome-terminal -e ~/.i3/monitoring.sh; workspace '10: Docker';"
+exec "i3-msg workspace '5: '; exec gnome-terminal -e ~/.i3/monitoring.sh; i3-msg workspace '10: Docker';"
 exec "i3-msg workspace '10: Docker'; exec gnome-terminal -e ~/.i3/docker-tools.sh;"
 
 # Assign
