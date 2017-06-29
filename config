@@ -171,7 +171,7 @@ bar {
 
 # My Settings
 #exec --no-startup-id "setxkbmap -model pc105 -layout us,ru -option grp:ctrl_shift_toggle,grp_led:scroll"
-exec --no-startup-id "setxkbmap -model pc105 -layout us,ru -option grp:caps_toggle, grp_led:scroll, compose:ralt"
+exec_always --no-startup-id "setxkbmap -model pc105 -layout us,ru -option grp:caps_toggle, grp_led:scroll"
 
 # Wallpaper
 exec_always feh --bg-scale $HOME/.i3/wallpaper.jpg
@@ -213,5 +213,5 @@ bindsym $alt+Shift+Tab workspace prev
 bindsym $mod+n exec "nautilus --no-desktop"
 
 # Changing language for i3bar
-bindcode $alt+50 exec "/home/sah4ez/.i3/change_keyboard_layout.sh"
+#bindcode $alt+50 exec "/home/sah4ez/.i3/change_keyboard_layout.sh"
 bindsym --release Caps_Lock exec "/home/sah4ez/.i3/change_keyboard_layout.sh"
