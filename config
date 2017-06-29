@@ -170,7 +170,8 @@ bar {
 }
 
 # My Settings
-exec --no-startup-id "setxkbmap -model pc105 -layout us,ru -option grp:alt_shift_toggle"
+#exec --no-startup-id "setxkbmap -model pc105 -layout us,ru -option grp:ctrl_shift_toggle,grp_led:scroll"
+exec --no-startup-id "setxkbmap -model pc105 -layout us,ru -option grp:caps_toggle, grp_led:scroll, compose:ralt"
 
 # Wallpaper
 exec_always feh --bg-scale $HOME/.i3/wallpaper.jpg
@@ -193,6 +194,7 @@ assign [class="Firefox"] $workspace2
 assign [class="skypeforlinux"] $workspace3
 assign [class="yakyak"] $workspace3
 assign [class="jetbrains-idea"] $workspace4
+assign [class="Tor Browser"] $workspace2
 
 # Floating window
 #for_window [class="skypeforlinux"] floating enable
@@ -205,8 +207,12 @@ bindsym $mod+m exec "pavucontrol"
 bindsym $mod+l exec "i3lock -i ~/.i3/wallpaper.png -p default -n"
 
 # Navigation
-bindsym Mod1+Tab workspace next
-bindsym Mod1+Shift+Tab workspace prev
+bindsym $alt+Tab workspace next
+bindsym $alt+Shift+Tab workspace prev
 
 # Navigator
 bindsym $mod+n exec "nautilus --no-desktop"
+
+# Changing language for i3bar
+bindcode $alt+50 exec "/home/sah4ez/.i3/change_keyboard_layout.sh"
+bindsym --release Caps_Lock exec "/home/sah4ez/.i3/change_keyboard_layout.sh"
