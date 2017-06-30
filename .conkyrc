@@ -49,5 +49,5 @@ TEXT
  { "full_text" : "SWAP ${swapperc}%" , "color" : ${if_match ${swapperc}<30}"\#ffffff"${else}${if_match ${swapperc}<60}"\#ffff3d"${else}"\#ff0000"${endif}${endif} },
  { "full_text" : " (${mem}/${memmax})${memperc}%" , "color" : ${if_match ${memperc}<33}"\#ffffff"${else}${if_match ${memperc}<70}"\#ffff3d"${else}"\#ff0000"${endif}${endif} },
  { "full_text" : " ${time %d/%m/%Y  %H:%M:%S }" , "color" : "\#42f44b" },
- { "full_text" : " ${execi 0,1 cat $HOME/.i3/active_keyboard_layout}" , "color" : "\#42fffb" }
+ { "full_text" : " ${execi 0,1 cat $HOME/.i3/active_keyboard_layout}" , "color" : ${if_match "${execi 0,1 cat $HOME/.i3/active_keyboard_layout}" == "ru"}"\#ff00fb"${else}"\#11ffff"${endif} }
 ],
