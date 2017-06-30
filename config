@@ -186,7 +186,7 @@ exec --no-startup-id yakyak
 exec --no-startup-id dunst -config $HOME/.i3/dunstrc
 exec --no-startup-id $HOME/.opt/idea-IU/bin/idea.sh
 exec gnome-terminal
-exec "i3-msg workspace '5: '; exec gnome-terminal -e ~/.i3/monitoring.sh; i3-msg workspace '10: Docker';exec gnome-terminal -e ~/.i3/docker-tools.sh;"
+exec "i3-msg workspace '5: '; exec gnome-terminal -e $HOME/.i3/monitoring.sh; i3-msg workspace '10: Docker'; exec gnome-terminal -e $HOME/.i3/docker-tools.sh;"
 
 # Assign
 assign [class="Firefox"] $workspace2
@@ -212,6 +212,12 @@ bindsym $alt+Shift+Tab workspace prev
 # Navigator
 bindsym $mod+n exec "nautilus --no-desktop"
 
-# Changing language for i3bar
+# Changing language Alt+Shift_L
 #bindcode $alt+50 exec "/home/sah4ez/.i3/change_keyboard_layout.sh"
-bindsym --release Caps_Lock exec "/home/sah4ez/.i3/change_keyboard_layout.sh"
+
+# Changing language for i3bar
+bindsym --release Caps_Lock exec "$HOME/.i3/change_keyboard_layout.sh"
+
+# Screen-Shot
+bindsym Print exec "gnome-screenshot --file=$HOME/screenshots/screen_$(date '+%d_%m_%Y-%H_%M_%s').png"
+#bindsym Print exec "nautilus --no-desktop"
