@@ -217,6 +217,7 @@ bindsym $mod+n exec "nautilus --no-desktop"
 
 # Changing language for i3bar
 bindsym --release Caps_Lock exec "$HOME/.i3/change_keyboard_layout.sh"
+bindsym --release Caps_Lock+r exec "echo 'en' > $HOME/.i3/active_keyboard_layout"
 
 # Screen-Shot
 bindsym Print exec "gnome-screenshot --file=$HOME/screenshots/screen_$(date '+%d_%m_%Y-%H_%M_%s').png"
