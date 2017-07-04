@@ -95,8 +95,8 @@ bindsym $mod+a focus parent
 
 set $workspace1 "1: "
 set $workspace2 "2: "
-set $workspace3 "3: "
-set $workspace4 "4: "
+set $workspace3 "3: "
+set $workspace4 "4: "
 set $workspace5 "5: "
 set $workspace6 "6: "
 set $workspace7 "7: "
@@ -192,9 +192,9 @@ exec "exec gnome-terminal -e $HOME/.i3/docker-tools.sh;"
 
 # Assign
 assign [class="Firefox"] $workspace2
-assign [class="skypeforlinux"] $workspace3
-assign [class="yakyak"] $workspace3
-assign [class="jetbrains-idea"] $workspace4
+assign [class="jetbrains-idea"] $workspace3
+assign [class="skypeforlinux"] $workspace4
+assign [class="yakyak"] $workspace4
 assign [class="Tor Browser"] $workspace2
 
 # Floating window
