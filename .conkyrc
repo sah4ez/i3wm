@@ -79,7 +79,9 @@ TEXT
                   ${endif} },
 
   { "full_text" : " ${time %d/%m/%Y  %H:%M:%S }" ,
-        "color" : ${if_match ${time %H} > 20}"\#ff0000"${else}"\#43f44b"${endif} },
+        "color" : ${if_match ${time %H} > 20 } "\#ff0000"${else}
+                     ${if_match ${time %H} < 6 } "\#ff0000"${else}"\#43f44b"${endif}
+                  ${endif} },
 
   { "full_text" : " ${execi 0,1 pactl list sinks | grep "Громкость: " | awk '{print $5}' | sed -n 1p }" ,
         "color" : ${if_match ${execi 0,1 pactl list sinks | grep "Громкость: " | awk '{print $5}' | sed -n 1p | sed -r s/%//}<27}"\#00ff00"${else}
