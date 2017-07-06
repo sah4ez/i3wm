@@ -36,19 +36,56 @@ TEXT
 
 # JSON for i3bar
 [
- { "full_text" : "(${cpu cpu0}% ${cpu cpu1}% ${cpu cpu2}% ${cpu cpu3}%)${cpu}% " , "color" : ${if_match ${cpu}<33}"\#bcff75"${else}${if_match ${cpu}<70}"\#ffe554"${else}"\#f71111"${endif}${endif} },
- { "full_text" : " ${upspeed enp4s0}:${totalup enp4s0}" , "color" : "\#fb23ff" },
- { "full_text" : " ${downspeed enp4s0}:${totaldown enp4s0}" , "color" : "\#fb23ff" },
- { "full_text" : "IO R/W ${diskio_read}/${diskio_write}" , "color" : "\#8819ff" },
- { "full_text" : "S ${entropy_avail}" , "color" : "\#afd30c" },
- #{ "full_text" : "/:${fs_free /}|home:${fs_free /home}|var:${fs_free /var}|usr:${fs_free /usr}" , "color" : "\#ffffff" },
- #{ "full_text" : " /:${fs_free /}" , "color" : "\#54ff9e" },
- #{ "full_text" : "home:${fs_free /home}" , "color" : "\#3dff91" },
- #{ "full_text" : "var:${fs_free /var}" , "color" : "\#3dff91" },
- #{ "full_text" : "usr:${fs_free /usr}" , "color" : "\#3dff91" },
- { "full_text" : "SWAP ${swapperc}%" , "color" : ${if_match ${swapperc}<30}"\#ffffff"${else}${if_match ${swapperc}<60}"\#ffff3d"${else}"\#ff0000"${endif}${endif} },
- { "full_text" : " (${mem}/${memmax})${memperc}%" , "color" : ${if_match ${memperc}<33}"\#ffffff"${else}${if_match ${memperc}<70}"\#ffff3d"${else}"\#ff0000"${endif}${endif} },
- { "full_text" : " ${time %d/%m/%Y  %H:%M:%S }" , "color" : "\#42f44b" },
- { "full_text" : " ${execi 0,1 pactl list sinks | grep "Громкость: " | awk '{print $5}' | sed -n 1p }" , "color" : ${if_match ${execi 0,1 pactl list sinks | grep "Громкость: " | awk '{print $5}' | sed -n 1p | sed -r s/%//}<27}"\#00ff00"${else}${if_match ${execi 0,1 pactl list sinks | grep "Громкость: " | awk '{print $5}' | sed -n 1p | sed -r s/%//}<35 }"\#ffff00"${else}"\#ff0000"${endif}${endif} },
- { "full_text" : " ${execi 0,1 cat $HOME/.i3/active_keyboard_layout}" , "color" : ${if_match "${execi 0,1 cat $HOME/.i3/active_keyboard_layout}" == "ru"}"\#ff00fb"${else}"\#11ffff"${endif} }
+  { "full_text" : "(${cpu cpu0}% ${cpu cpu1}% ${cpu cpu2}% ${cpu cpu3}%)${cpu}% " , 
+        "color" : ${if_match ${cpu}<33}"\#bcff75"${else}
+                    ${if_match ${cpu}<70}"\#ffe554"${else}"\#f71111"${endif}
+                  ${endif} },
+
+  { "full_text" : " ${upspeed enp4s0}:${totalup enp4s0}" ,
+        "color" : "\#fb23ff" },
+
+  { "full_text" : " ${downspeed enp4s0}:${totaldown enp4s0}" ,
+        "color" : "\#fb23ff" },
+
+  { "full_text" : "IO R/W ${diskio_read}/${diskio_write}" ,
+        "color" : "\#8819ff" },
+
+  { "full_text" : "S ${entropy_avail}" ,
+        "color" : "\#afd30c" },
+
+ #{ "full_text" : "/:${fs_free /}|home:${fs_free /home}|var:${fs_free /var}|usr:${fs_free /usr}" ,
+ #      "color" : "\#ffffff" },
+ #
+ #{ "full_text" : " /:${fs_free /}" ,
+ #      "color" : "\#54ff9e" },
+ #
+ #{ "full_text" : "home:${fs_free /home}" ,
+ #      "color" : "\#3dff91" },
+ #
+ #{ "full_text" : "var:${fs_free /var}" ,
+ #      "color" : "\#3dff91" },
+ #
+ #{ "full_text" : "usr:${fs_free /usr}" ,
+ #      "color" : "\#3dff91" },
+
+  { "full_text" : "SWAP ${swapperc}%" ,
+        "color" : ${if_match ${swapperc}<30}"\#ffffff"${else}
+                    ${if_match ${swapperc}<60}"\#ffff3d"${else}"\#ff0000"${endif}
+                  ${endif} },
+
+  { "full_text" : " (${mem}/${memmax})${memperc}%" ,
+        "color" : ${if_match ${memperc}<33}"\#ffffff"${else}
+                    ${if_match ${memperc}<70}"\#ffff3d"${else}"\#ff0000"${endif}
+                  ${endif} },
+
+  { "full_text" : " ${time %d/%m/%Y  %H:%M:%S }" ,
+        "color" : ${if_match ${time %H} > 20}"\#ff0000"${else}"\#43f44b"${endif} },
+
+  { "full_text" : " ${execi 0,1 pactl list sinks | grep "Громкость: " | awk '{print $5}' | sed -n 1p }" ,
+        "color" : ${if_match ${execi 0,1 pactl list sinks | grep "Громкость: " | awk '{print $5}' | sed -n 1p | sed -r s/%//}<27}"\#00ff00"${else}
+                     ${if_match ${execi 0,1 pactl list sinks | grep "Громкость: " | awk '{print $5}' | sed -n 1p | sed -r s/%//}<35 }"\#ffff00"${else}"\#ff0000"${endif}
+                  ${endif} },
+
+  { "full_text" : " ${execi 0,1 cat $HOME/.i3/active_keyboard_layout}" ,
+        "color" : ${if_match "${execi 0,1 cat $HOME/.i3/active_keyboard_layout}" == "ru"}"\#ff00fb"${else}"\#11ffff"${endif} }
 ],
