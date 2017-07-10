@@ -177,7 +177,8 @@ exec_always --no-startup-id "setxkbmap -model pc105 -layout us,ru -option grp:ca
 exec_always feh --bg-scale $HOME/.i3/wallpaper.jpg
 
 # VPN
-exec nmcli con up id vpn.ediweb.ru passwd-file /home/sah4ez/edisoft/cert_vpn/secret
+bindsym $mod+c exec "nmcli con up id vpn.ediweb.ru passwd-file /home/sah4ez/edisoft/cert_vpn/secret"
+bindsym $mod+$alt+c exec "nmcli con down vpn.ediweb.ru"
 
 # Starting app
 exec --no-startup-id firefox
