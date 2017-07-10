@@ -47,6 +47,11 @@ TEXT
   { "full_text" : " ${downspeed enp4s0}:${totaldown enp4s0}" ,
         "color" : "\#fb23ff" },
 
+  { "full_text" : "VPN: ${execi 0,1 /bin/bash ~/.i3/check_vpn.sh}" ,
+         "color" : ${if_match "${execi 0,1 /bin/bash ~/.i3/check_vpn.sh}"=="off"}"\#555555"
+                   ${else}"\#00ff00"
+                   ${endif} },
+
   { "full_text" : "IO R/W ${diskio_read}/${diskio_write}" ,
         "color" : "\#8819ff" },
 
