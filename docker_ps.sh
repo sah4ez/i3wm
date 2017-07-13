@@ -3,6 +3,6 @@
 while true
 do
   clear
-  docker ps
+  docker ps --no-trunc
   sleep 1
 done
