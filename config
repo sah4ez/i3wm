@@ -195,9 +195,9 @@ exec "exec gnome-terminal -e $HOME/.i3/docker-tools.sh;"
 # Assign
 assign [class="Firefox"] $workspace2
 assign [class="jetbrains-idea"] $workspace3
-assign [class="skypeforlinux|yakyak|slack"] $workspace4
-#assign [class="yakyak"] $workspace4
-#assign [class="slack"] $workspace4
+assign [class="skypeforlinux"] $workspace4
+assign [class="yakyak"] $workspace4
+assign [class="slack|Slack"] $workspace4
 assign [class="Tor Browser"] $workspace2
 
 # Floating window
