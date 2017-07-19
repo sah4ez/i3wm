@@ -229,8 +229,8 @@ bindsym Print exec "gnome-screenshot --file=$HOME/screenshots/screen_$(date '+%d
 #bindsym Print exec "nautilus --no-desktop"
 
 # VOLUM 0 - back; 1 - front
-bindcode $mod+21 exec --no-startup-id "pactl -- set-sink-volume 0 +1% && pactl -- set-sink-volume 1 +1%"
-bindcode $mod+20 exec --no-startup-id "pactl -- set-sink-volume 0 -1% && pactl -- set-sink-volume 1 -1%"
-bindcode $mod+Shift+21 exec --no-startup-id "pactl -- set-sink-volume 0 +5% && pactl -- set-sink-volume 1 +5%"
-bindcode $mod+Shift+20 exec --no-startup-id "pactl -- set-sink-volume 0 -5% && pactl -- set-sink-volume 1 -5%"
-bindsym $mod+Shift+m exec --no-startup-id "pactl -- set-sink-mute 0 toggle && pactl -- set-sink-mute 1 toggle"
+bindcode $mod+21 exec --no-startup-id "pactl -- set-sink-volume 0 +1% && pactl -- set-sink-volume 3 +1%"
+bindcode $mod+20 exec --no-startup-id "pactl -- set-sink-volume 0 -1% && pactl -- set-sink-volume 3 -1%"
+bindcode $mod+Shift+21 exec --no-startup-id "pactl -- set-sink-volume 0 +5% && pactl -- set-sink-volume 3 +5%"
+bindcode $mod+Shift+20 exec --no-startup-id "pactl -- set-sink-volume 0 -5% && pactl -- set-sink-volume 3 -5%"
+bindsym $mod+Shift+m exec --no-startup-id "pactl -- set-sink-mute 0 toggle && pactl -- set-sink-mute 3 toggle"
