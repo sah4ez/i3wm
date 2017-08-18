@@ -14,7 +14,7 @@ set $alt Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:System San Francisco Display 11
+font pango:System San Francisco Display 13, FontAwesome 12
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -101,7 +101,7 @@ set $workspace5 "5: "
 set $workspace6 "6: "
 set $workspace7 "7: "
 set $workspace8 "8: "
-set $workspace9 "9: "
+set $workspace9 "9:$"
 set $workspace10 "10: Docker"
 
 # switch to workspace
@@ -199,6 +199,7 @@ assign [class="skypeforlinux"] $workspace4
 assign [class="yakyak"] $workspace4
 assign [class="slack|Slack"] $workspace4
 assign [class="Tor Browser"] $workspace2
+assign [class="info.exe"] $workspace9
 
 # Floating window
 #for_window [class="skypeforlinux"] floating enable
@@ -229,8 +230,10 @@ bindsym Print exec "gnome-screenshot --file=$HOME/screenshots/screen_$(date '+%d
 #bindsym Print exec "nautilus --no-desktop"
 
 # VOLUM 0 - back; 1 - front
-bindcode $mod+21 exec --no-startup-id "pactl -- set-sink-volume 0 +1% && pactl -- set-sink-volume 3 +1%"
-bindcode $mod+20 exec --no-startup-id "pactl -- set-sink-volume 0 -1% && pactl -- set-sink-volume 3 -1%"
-bindcode $mod+Shift+21 exec --no-startup-id "pactl -- set-sink-volume 0 +5% && pactl -- set-sink-volume 3 +5%"
-bindcode $mod+Shift+20 exec --no-startup-id "pactl -- set-sink-volume 0 -5% && pactl -- set-sink-volume 3 -5%"
-bindsym $mod+Shift+m exec --no-startup-id "pactl -- set-sink-mute 0 toggle && pactl -- set-sink-mute 3 toggle"
+bindcode $mod+21 exec --no-startup-id "pactl -- set-sink-volume 0 +1% & pactl -- set-sink-volume 1 +1% & pactl -- set-sink-volume 3 +1%"
+bindcode $mod+20 exec --no-startup-id "pactl -- set-sink-volume 0 -1% & pactl -- set-sink-volume 1 -1% & pactl -- set-sink-volume 3 -1%"
+bindcode $mod+Shift+21 exec --no-startup-id "pactl -- set-sink-volume 0 +5% & pactl -- set-sink-volume 1 +5% & pactl -- set-sink-volume 3 +5%"
+bindcode $mod+Shift+20 exec --no-startup-id "pactl -- set-sink-volume 0 -5% & pactl -- set-sink-volume 1 -5% & pactl -- set-sink-volume 3 -5%"
+bindsym $mod+Shift+m exec --no-startup-id "pactl -- set-sink-mute 0 toggle & pactl -- set-sink-mute 1 toggle & pactl -- set-sink-mute 3 toggle"
+
+bindsym $mod+q exec --no-startup-id "wine $HOME/wine/drive_c/ATON/QUIK/info.exe"
