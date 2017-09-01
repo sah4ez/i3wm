@@ -226,7 +226,8 @@ bindsym --release Caps_Lock exec "$HOME/.i3/change_keyboard_layout.sh"
 bindsym --release Caps_Lock+r exec "echo 'en' > $HOME/.i3/active_keyboard_layout"
 
 # Screen-Shot
-bindsym Print exec "gnome-screenshot --file=$HOME/screenshots/screen_$(date '+%d_%m_%Y-%H_%M_%s').png"
+bindsym Print exec "gnome-screenshot --area --file=$HOME/screenshots/screen_$(date '+%d_%m_%Y-%H_%M_%s').png"
+bindsym Shift+Print exec "gnome-screenshot --file=$HOME/screenshots/screen_$(date '+%d_%m_%Y-%H_%M_%s').png && els"
 #bindsym Print exec "nautilus --no-desktop"
 
 # VOLUM 0 - back; 1 - front
