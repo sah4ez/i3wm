@@ -88,9 +88,9 @@ TEXT
                      ${if_match ${time %H} < 6 } "\#ff0000"${else}"\#43f44b"${endif}
                   ${endif} },
 
-  { "full_text" : " ${execi 0,1 pactl list sinks | grep "Громкость: " | awk '{print $5}' | sed -n 1p }" ,
-        "color" : ${if_match ${execi 0,1 pactl list sinks | grep "Громкость: " | awk '{print $5}' | sed -n 1p | sed -r s/%//}<27}"\#00ff00"${else}
-                     ${if_match ${execi 0,1 pactl list sinks | grep "Громкость: " | awk '{print $5}' | sed -n 1p | sed -r s/%//}<35 }"\#ffff00"${else}"\#ff0000"${endif}
+  { "full_text" : " ${execi 0,1 amixer -c 1 -M -D pulse get Master | grep -o -E [[:digit:]]+% | head -1 }" ,
+        "color" : ${if_match ${execi 0,1 amixer -c 1 -M -D pulse get Master | grep -o -E [[:digit:]]+% | head -1 | sed -r s/%//}<35}"\#00ff00"${else}
+                     ${if_match ${execi 0,1 amixer -c 1 -M -D pulse get Master | grep -o -E [[:digit:]]+% | head -1 | sed -r s/%//}<60  }"\#ffff00"${else}"\#ff0000"${endif}
                   ${endif} },
 
   { "full_text" : " ${execi 0,1 cat $HOME/.i3/active_keyboard_layout}" ,

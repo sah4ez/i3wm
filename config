@@ -231,10 +231,15 @@ bindsym Shift+Print exec "gnome-screenshot --file=$HOME/screenshots/screen_$(dat
 #bindsym Print exec "nautilus --no-desktop"
 
 # VOLUM 0 - back; 1 - front
-bindcode $mod+21 exec --no-startup-id "pactl -- set-sink-volume 0 +1% & pactl -- set-sink-volume 1 +1% & pactl -- set-sink-volume 3 +1%"
-bindcode $mod+20 exec --no-startup-id "pactl -- set-sink-volume 0 -1% & pactl -- set-sink-volume 1 -1% & pactl -- set-sink-volume 3 -1%"
-bindcode $mod+Shift+21 exec --no-startup-id "pactl -- set-sink-volume 0 +5% & pactl -- set-sink-volume 1 +5% & pactl -- set-sink-volume 3 +5%"
-bindcode $mod+Shift+20 exec --no-startup-id "pactl -- set-sink-volume 0 -5% & pactl -- set-sink-volume 1 -5% & pactl -- set-sink-volume 3 -5%"
-bindsym $mod+Shift+m exec --no-startup-id "pactl -- set-sink-mute 0 toggle & pactl -- set-sink-mute 1 toggle & pactl -- set-sink-mute 3 toggle"
+#bindcode $mod+21 exec --no-startup-id "pactl -- set-sink-volume 0 +1% & pactl -- set-sink-volume 1 +1% & pactl -- set-sink-volume 3 +1% & pactl -- set-sink-volume 88 +1%"
+#bindcode $mod+20 exec --no-startup-id "pactl -- set-sink-volume 0 -1% & pactl -- set-sink-volume 1 -1% & pactl -- set-sink-volume 3 -1% & pactl -- set-sink-volume 88 -1%"
+#bindcode $mod+Shift+21 exec --no-startup-id "pactl -- set-sink-volume 0 +5% & pactl -- set-sink-volume 1 +5% & pactl -- set-sink-volume 3 +5% & pactl -- set-sink-volume 88 +5%"
+#bindcode $mod+Shift+20 exec --no-startup-id "pactl -- set-sink-volume 0 -5% & pactl -- set-sink-volume 1 -5% & pactl -- set-sink-volume 3 -5% & pactl -- set-sink-volume 88 -5%"
+#bindsym $mod+Shift+m exec --no-startup-id "pactl -- set-sink-mute 0 toggle & pactl -- set-sink-mute 1 toggle & pactl -- set-sink-mute 3 toggle & pactl -- set-sink-mute 88 toggle"
+bindcode $mod+21 exec --no-startup-id "amixer -q sset Master 1%+"
+bindcode $mod+20 exec --no-startup-id "amixer -q sset Master 1%-"
+bindcode $mod+Shift+21 exec --no-startup-id "amixer -q sset Master 5%+"
+bindcode $mod+Shift+20 exec --no-startup-id "amixer -q sset Master 5%-"
+bindsym $mod+Shift+m exec --no-startup-id "amixer -D pulse set Master 1+ toggle"
 
 bindsym $mod+q exec --no-startup-id "wine $HOME/wine/drive_c/ATON/QUIK/info.exe"
