@@ -177,8 +177,8 @@ exec_always --no-startup-id "setxkbmap -model pc105 -layout us,ru -option grp:ca
 exec_always feh --bg-scale $HOME/.i3/wallpaper.jpg
 
 # VPN
-bindsym $mod+c exec "nmcli con up id vpn.ediweb.ru passwd-file /home/sah4ez/edisoft/cert_vpn/secret"
-bindsym $mod+$alt+c exec "nmcli con down vpn.ediweb.ru"
+#bindsym $mod+c exec "nmcli con up id vpn.ediweb.ru passwd-file /home/sah4ez/edisoft/cert_vpn/secret"
+#bindsym $mod+$alt+c exec "nmcli con down vpn.ediweb.ru"
 
 # Starting app
 exec --no-startup-id firefox
@@ -186,7 +186,8 @@ exec --no-startup-id skypeforlinux
 exec --no-startup-id yakyak
 exec --no-startup-id slack
 exec --no-startup-id dunst -config $HOME/.i3/dunstrc
-exec --no-startup-id $HOME/.opt/idea-IU/bin/idea.sh
+#exec --no-startup-id $HOME/.opt/idea-IU/bin/idea.sh
+exec --no-startup-id thunderbird
 exec gnome-terminal
 exec "i3-msg workspace '5: '; exec gnome-terminal -e $HOME/.i3/monitoring.sh;"
 #exec "i3-msg workspace '10: Docker'; exec gnome-terminal -e $HOME/.i3/docker-tools.sh;"
@@ -194,11 +195,12 @@ exec "exec gnome-terminal -e $HOME/.i3/docker-tools.sh;"
 
 # Assign
 assign [class="Firefox"] $workspace2
+assign [class="Tor Browser"] $workspace2
 assign [class="jetbrains-idea"] $workspace3
 assign [class="skypeforlinux"] $workspace4
-assign [class="yakyak"] $workspace4
 assign [class="slack|Slack"] $workspace4
-assign [class="Tor Browser"] $workspace2
+assign [class="yakyak"] $workspace4
+assign [class="Thunderbird"] $workspace6
 assign [class="info.exe"] $workspace9
 
 # Floating window
