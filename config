@@ -182,7 +182,7 @@ exec_always feh --bg-scale $HOME/.i3/wallpaper.jpg
 
 # Starting app
 exec --no-startup-id firefox
-exec --no-startup-id skypeforlinux
+#exec --no-startup-id skypeforlinux
 exec --no-startup-id yakyak
 exec --no-startup-id slack
 exec --no-startup-id dunst -config $HOME/.i3/dunstrc
