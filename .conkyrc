@@ -57,6 +57,10 @@ TEXT
 
   { "full_text" : "S ${entropy_avail}" ,
         "color" : "\#afd30c" },
+  { "full_text" : "var:${fs_free_perc /var}%" ,
+        "color" : ${if_match ${fs_free_perc /var}<30}"\#ff0000"${else}
+                     ${if_match ${fs_free_perc /var}<50  }"\#ffff00"${else}"\#00ff00"${endif}
+                  ${endif} },
 
  #{ "full_text" : "/:${fs_free /}|home:${fs_free /home}|var:${fs_free /var}|usr:${fs_free /usr}" ,
  #      "color" : "\#ffffff" },
