@@ -1,6 +1,5 @@
 #!/bin/bash
 
-LANG=en_EN.UTF-8
 ok=$(nmcli c | grep OpenWrt | awk '{print $4}')
 if [ "$ok" == "--" ]; 
 then 
