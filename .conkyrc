@@ -51,6 +51,8 @@ TEXT
  #        "color" : ${if_match "${execi 0,1 /bin/bash ~/.i3/check_vpn.sh}"=="off"}"\#555555"
  #                  ${else}"\#00ff00"
  #                  ${endif} },
+  { "full_text" : "WiFi: ${execi 0,1 /bin/bash ~/.i3/check_wifi.sh}" ,
+         "color" : "${execi 0,1 /bin/bash ~/.i3/check_wifi_signal.sh}"},
 
   { "full_text" : "IO R/W ${diskio_read}/${diskio_write}" ,
         "color" : "\#8819ff" },

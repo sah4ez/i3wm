@@ -186,6 +186,8 @@ exec_always feh --bg-scale $HOME/.i3/wallpaper.jpg
 #bindsym $mod+$alt+c exec "nmcli con down vpn.ediweb.ru"
 bindsym $mod+c exec "nmcli con up id akozlenkov"
 bindsym $mod+$alt+c exec "nmcli con down akozlenkov"
+bindsym $mod+p exec "nmcli con up id OpenWrt"
+bindsym $mod+$alt+p exec "nmcli con down OpenWrt"
 
 # Starting app
 exec --no-startup-id firefox
