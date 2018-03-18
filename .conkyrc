@@ -41,10 +41,10 @@ TEXT
                     ${if_match ${cpu}<70}"\#ffe554"${else}"\#f71111"${endif}
                   ${endif} },
 
-  { "full_text" : " ${upspeed enp4s0}:${totalup enp4s0}" ,
+  { "full_text" : " ${upspeed wlx503eaa362dee}:${totalup wlx503eaa362dee}" ,
         "color" : "\#fb23ff" },
 
-  { "full_text" : " ${downspeed enp4s0}:${totaldown enp4s0}" ,
+  { "full_text" : " ${downspeed wlx503eaa362dee}:${totaldown wlx503eaa362dee}" ,
         "color" : "\#fb23ff" },
 
  # { "full_text" : "VPN: ${execi 0,1 /bin/bash ~/.i3/check_vpn.sh}" ,
