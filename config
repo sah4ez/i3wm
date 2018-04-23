@@ -191,8 +191,9 @@ bindsym $mod+$alt+p exec "nmcli con down OpenWrt"
 
 # Starting app
 exec --no-startup-id firefox
-#exec --no-startup-id skypeforlinux
-exec --no-startup-id yakyak
+exec --no-startup-id skypeforlinux
+#exec --no-startup-id yakyak
+exec --no-startup-id telegram
 exec --no-startup-id slack
 exec --no-startup-id dunst -config $HOME/.i3/dunstrc
 #exec --no-startup-id $HOME/.opt/idea-IU/bin/idea.sh
@@ -206,9 +207,10 @@ exec "exec gnome-terminal -e $HOME/.i3/docker-tools.sh;"
 assign [class="Firefox"] $workspace2
 assign [class="Tor Browser"] $workspace2
 assign [class="jetbrains-idea"] $workspace3
-assign [class="skypeforlinux"] $workspace4
+assign [class="skypeforlinux|skype"] $workspace4
 assign [class="slack|Slack"] $workspace4
 assign [class="yakyak"] $workspace4
+assign [class="telegram|TelegramDesktop"] $workspace4
 assign [class="Thunderbird"] $workspace6
 assign [class="info.exe"] $workspace9
 
