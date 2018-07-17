@@ -192,7 +192,7 @@ bindsym $mod+$alt+p exec "nmcli con down OpenWrt"
 
 # Starting app
 exec --no-startup-id firefox
-exec --no-startup-id skypeforlinux
+exec --no-startup-id skype
 exec --no-startup-id yakyak
 exec --no-startup-id telegram
 exec --no-startup-id slack
@@ -216,7 +216,7 @@ assign [class="Thunderbird"] $workspace6
 assign [class="info.exe"] $workspace9
 
 # Floating window
-#for_window [class="skypeforlinux"] floating enable
+for_window [class="skype"] floating enable
 #for_window [class="yakyak"] floating enable
 
 # Volume
