@@ -256,7 +256,7 @@ bindcode $mod+Shift+21 exec --no-startup-id "amixer -q sset Master 5%+"
 bindcode $mod+Shift+20 exec --no-startup-id "amixer -q sset Master 5%-"
 bindsym $mod+Shift+m exec --no-startup-id "amixer -D pulse set Master 1+ toggle"
 
-bindsym $mod+q exec --no-startup-id "wine $HOME/wine/drive_c/ATON/QUIK/info.exe"
+bindsym $mod+q exec --no-startup-id "WINEPREFIX=$HOME/.wine32 wine $HOME/.wine32/drive_c/ATON/QUIK/info.exe"
 
 # Multi monitors
 force-xinerama yes
