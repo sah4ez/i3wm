@@ -41,10 +41,10 @@ TEXT
                     ${if_match ${cpu}<70}"\#ffe554"${else}"\#f71111"${endif}
                   ${endif} },
 
-  { "full_text" : " ${upspeed wlx503eaa362dee}:${totalup wlx503eaa362dee}" ,
+  { "full_text" : " ${upspeed wlp2s0}:${totalup wlp2s0}" ,
         "color" : "\#fb23ff" },
 
-  { "full_text" : " ${downspeed wlx503eaa362dee}:${totaldown wlx503eaa362dee}" ,
+  { "full_text" : " ${downspeed wlp2s0}:${totaldown wlp2s0}" ,
         "color" : "\#fb23ff" },
 
  # { "full_text" : "VPN: ${execi 0,1 /bin/bash ~/.i3/check_vpn.sh}" ,
@@ -62,6 +62,10 @@ TEXT
   { "full_text" : "var:${fs_free_perc /var}%" ,
         "color" : ${if_match ${fs_free_perc /var}<30}"\#ff0000"${else}
                      ${if_match ${fs_free_perc /var}<50  }"\#ffff00"${else}"\#00ff00"${endif}
+                  ${endif} },
+  { "full_text" : ":${execi 0,1 /bin/bash ~/.i3/battery_status.sh}:${execi 0,1 /bin/bash ~/.i3/battery.sh}%" ,
+        "color" : ${if_match ${execi 0,1 /bin/bash ~/.i3/battery.sh}<33}"\#ff0000"${else}
+                     ${if_match ${execi 0,1 /bin/bash ~/.i3/battery.sh}<63  }"\#ffff00"${else}"\#00ff00"${endif}
                   ${endif} },
 
  #{ "full_text" : "/:${fs_free /}|home:${fs_free /home}|var:${fs_free /var}|usr:${fs_free /usr}" ,
@@ -94,9 +98,9 @@ TEXT
                      ${if_match ${time %H} < 6 } "\#ff0000"${else}"\#43f44b"${endif}
                   ${endif} },
 
-  { "full_text" : " ${execi 0,1 amixer -c 1 -M -D pulse get Master | grep -o -E [[:digit:]]+% | head -1 }" ,
-        "color" : ${if_match ${execi 0,1 amixer -c 1 -M -D pulse get Master | grep -o -E [[:digit:]]+% | head -1 | sed -r s/%//}<35}"\#00ff00"${else}
-                     ${if_match ${execi 0,1 amixer -c 1 -M -D pulse get Master | grep -o -E [[:digit:]]+% | head -1 | sed -r s/%//}<60  }"\#ffff00"${else}"\#ff0000"${endif}
+  { "full_text" : " ${execi 0,1 amixer sget Master | grep -o -E [[:digit:]]+% | head -1 }" ,
+        "color" : ${if_match ${execi 0,1 amixer sget Master | grep -o -E [[:digit:]]+% | head -1 | sed -r s/%//}<35}"\#00ff00"${else}
+                     ${if_match ${execi 0,1 amixer sget Master | grep -o -E [[:digit:]]+% | head -1 | sed -r s/%//}<60  }"\#ffff00"${else}"\#ff0000"${endif}
                   ${endif} },
 
   { "full_text" : " ${execi 0,1 cat $HOME/.i3/active_keyboard_layout}" ,
