@@ -42,7 +42,7 @@ bindsym $mod+Shift+q kill
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+d exec --no-startup-id "rofi -combi-modi window,run,ssh -show combi -modi combi -bg '#232323' -fg '#FDF6E3' -kb-row-up 'Up,Control+p,Shift+Tab,Control+j' -kb-row-down 'Down,Control+n,Control+k' -kb-accept-entry 'Control+m,Return,KP_Enter' -run-list-command '. ~/scripts/alias.sh' -run-command '/bin/bash -i -c '{cmd}'' -rnow " 
+bindsym $mod+d exec --no-startup-id "rofi -combi-modi window,run,ssh -show combi -modi combi -bg '#232323' -fg '#FDF6E3' -kb-row-up 'Up,Control+p,Shift+Tab,Control+j' -kb-row-down 'Down,Control+n,Control+k' -kb-accept-entry 'Control+m,Return,KP_Enter' -kb-remove-to-eol '' -run-command '/bin/bash -i -c '{cmd}'' -rnow " 
 
 # change focus
 bindsym $mod+j focus left

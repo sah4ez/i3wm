@@ -1,9 +1,9 @@
 #!/bin/bash
 
-ok=$(nmcli c | grep OpenWrt | awk '{print $4}')
+ok=$(nmcli c | grep wlp2s0 | awk '{print $4}')
 if [ "$ok" == "--" ]; 
 then 
     echo "NO"
 else
-    nmcli device wifi list | grep OpenWrt | awk '{print $8}'
+    nmcli device wifi list | egrep "\*" | awk '{print $8}'
 fi
