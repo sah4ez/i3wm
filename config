@@ -256,11 +256,13 @@ bindcode $mod+Shift+21 exec --no-startup-id "amixer -q sset Master 5%+"
 bindcode $mod+Shift+20 exec --no-startup-id "amixer -q sset Master 5%-"
 bindsym $mod+Shift+m exec --no-startup-id "amixer -D pulse set Master 1+ toggle"
 
+# touchpad
 exec --no-startup-id xinput set-prop 12 278 0
 exec --no-startup-id xinput set-prop 12 285 -35 -35
 exec --no-startup-id xinput set-prop 10 278 0
 exec --no-startup-id xinput set-prop 10 285 -35 -35
 exec synclient VertScroll=-79 synclient HorizScroll=-79
+bindsym $alt+l exec --no-startup-id "$HOME/.i3/touchpad_lock.sh"
 # bindsym $mod+q exec --no-startup-id "WINEPREFIX=$HOME/.wine32 wine $HOME/.wine32/drive_c/ATON/QUIK/info.exe"
 
 # Multi monitors
