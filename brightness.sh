@@ -1,9 +1,9 @@
 #!/bin/bash
 
-if [ -f ${HOME}/.i3/brightness ] ;
+if [ ! -f ${HOME}/.i3/brightness ] ;
 then
 	echo "Set default valeus for brightness"
-	echo '.5' > ${HOME}/.i3/brightness
+	echo ".5" > ${HOME}/.i3/brightness
 fi
 
 if [ -f /tmp/brightness.lock ] ;
