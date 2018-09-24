@@ -36,7 +36,7 @@ TEXT
 
 # JSON for i3bar
 [
-  { "full_text" : "(${cpu cpu0}% ${cpu cpu1}% ${cpu cpu2}% ${cpu cpu3}%)${cpu}% " , 
+  { "full_text" : "${cpu}% " , 
         "color" : ${if_match ${cpu}<33}"\#bcff75"${else}
                     ${if_match ${cpu}<70}"\#ffe554"${else}"\#f71111"${endif}
                   ${endif} },
