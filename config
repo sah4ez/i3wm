@@ -275,4 +275,7 @@ bindsym $mod+u move workspace to output left
 bindsym $mod+o move workspace to output right
 
 bindsym $mod+shift+h exec --no-startup-id "systemctl suspend"
-exec "xrandr --output eDP-1 --mode 1600x900 && i3 restart 2&> /dev/null"
+
+exec --no-startup-id "xrandr --output eDP-1 --mode 1600x900 && i3 restart 2&> /dev/null"
+bindsym $alt+shift+s exec --no-startup-id "xrandr --output eDP-1 --mode 1600x900 && i3 restart 2&> /dev/null"
+bindsym $alt+shift+b exec --no-startup-id "xrandr --output eDP-1 --mode 1920x1080 && i3 restart 2&> /dev/null"
