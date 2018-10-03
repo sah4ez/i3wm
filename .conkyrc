@@ -57,12 +57,12 @@ TEXT
   { "full_text" : "IO R/W ${diskio_read}/${diskio_write}" ,
         "color" : "\#8819ff" },
 
-  { "full_text" : "S ${entropy_avail}" ,
-        "color" : "\#afd30c" },
-  { "full_text" : "var:${fs_free_perc /var}%" ,
-        "color" : ${if_match ${fs_free_perc /var}<30}"\#ff0000"${else}
-                     ${if_match ${fs_free_perc /var}<50  }"\#ffff00"${else}"\#00ff00"${endif}
-                  ${endif} },
+# { "full_text" : "S ${entropy_avail}" ,
+#       "color" : "\#afd30c" },
+# { "full_text" : "var:${fs_free_perc /var}%" ,
+#       "color" : ${if_match ${fs_free_perc /var}<30}"\#ff0000"${else}
+#                   ${if_match ${fs_free_perc /var}<50  }"\#ffff00"${else}"\#00ff00"${endif}
+#                 ${endif} },
   { "full_text" : ":${execi 0,1 /bin/bash ~/.i3/battery_status.sh}:${execi 0,1 /bin/bash ~/.i3/battery.sh}%" ,
         "color" : ${if_match ${execi 0,1 /bin/bash ~/.i3/battery.sh}<33}"\#ff0000"${else}
                      ${if_match ${execi 0,1 /bin/bash ~/.i3/battery.sh}<63  }"\#ffff00"${else}"\#00ff00"${endif}
@@ -83,26 +83,26 @@ TEXT
  #{ "full_text" : "usr:${fs_free /usr}" ,
  #      "color" : "\#3dff91" },
 
-  { "full_text" : "SWAP ${swapperc}%" ,
-        "color" : ${if_match ${swapperc}<30}"\#ffffff"${else}
-                    ${if_match ${swapperc}<60}"\#ffff3d"${else}"\#ff0000"${endif}
-                  ${endif} },
+# { "full_text" : "SWAP ${swapperc}%" ,
+#       "color" : ${if_match ${swapperc}<30}"\#ffffff"${else}
+#                   ${if_match ${swapperc}<60}"\#ffff3d"${else}"\#ff0000"${endif}
+#                 ${endif} },
 
-  { "full_text" : " (${mem}/${memmax})${memperc}%" ,
+  { "full_text" : " (${mem})${memperc}%" ,
         "color" : ${if_match ${memperc}<33}"\#ffffff"${else}
                     ${if_match ${memperc}<70}"\#ffff3d"${else}"\#ff0000"${endif}
                   ${endif} },
 
-  { "full_text" : " ${time %d/%m/%Y  %H:%M:%S }" ,
+  { "full_text" : " ${time %d-%m-%YT%H:%M:%S }" ,
         "color" : ${if_match ${time %H} > 20 } "\#ff0000"${else}
                      ${if_match ${time %H} < 6 } "\#ff0000"${else}"\#43f44b"${endif}
                   ${endif} },
 
-  { "full_text" : " ${execi 0,1 amixer sget Master | grep -o -E [[:digit:]]+% | head -1 }" ,
+  { "full_text" : "V: ${execi 0,1 amixer sget Master | grep -o -E [[:digit:]]+% | head -1 }" ,
         "color" : ${if_match ${execi 0,1 amixer sget Master | grep -o -E [[:digit:]]+% | head -1 | sed -r s/%//}<35}"\#00ff00"${else}
                      ${if_match ${execi 0,1 amixer sget Master | grep -o -E [[:digit:]]+% | head -1 | sed -r s/%//}<60  }"\#ffff00"${else}"\#ff0000"${endif}
                   ${endif} },
 
-  { "full_text" : " ${execi 0,1 cat $HOME/.i3/active_keyboard_layout}" ,
+  { "full_text" : "L: ${execi 0,1 cat $HOME/.i3/active_keyboard_layout}" ,
         "color" : ${if_match "${execi 0,1 cat $HOME/.i3/active_keyboard_layout}" == "ru"}"\#ff00fb"${else}"\#11ffff"${endif} }
 ],

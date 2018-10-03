@@ -240,8 +240,8 @@ bindsym --release Caps_Lock exec "$HOME/.i3/change_keyboard_layout.sh"
 bindsym --release Caps_Lock+r exec "echo 'en' > $HOME/.i3/active_keyboard_layout"
 
 # Screen-Shot
-bindsym Print exec scrot -u -e 'mv $f $${HOME}/screenshots'
-bindsym $alt+Print exec scrot -s -e 'mv $f $${HOME}/screenshots'
+bindsym Print exec scrot -u -e 'mv $f $${HOME}/screenshots && gthumb $${HOME}/screenshots/$f'
+# bindsym $alt+Print exec scrot -s -e 'mv $f $${HOME}/screenshots && gthumb $${HOME}/screenshots/$f'
 #bindsym Print exec "nautilus --no-desktop"
 
 # VOLUM 0 - back; 1 - front
@@ -273,3 +273,6 @@ bindsym $mod+shift+b exec --no-startup-id "$HOME/.i3/brightness.sh -0.1"
 force-xinerama yes
 bindsym $mod+u move workspace to output left
 bindsym $mod+o move workspace to output right
+
+bindsym $mod+shift+h exec --no-startup-id "systemctl suspend"
+exec "xrandr --output eDP-1 --mode 1600x900 && i3 restart 2&> /dev/null"
