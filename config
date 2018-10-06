@@ -204,6 +204,11 @@ exec "i3-msg workspace '5: '; exec gnome-terminal -e $HOME/.i3/monitoring.sh;
 #exec "i3-msg workspace '10: Docker'; exec gnome-terminal -e $HOME/.i3/docker-tools.sh;"
 exec "exec gnome-terminal -e $HOME/.i3/docker-tools.sh;"
 
+## Wifi
+exec --no-startup-id "/sbin/wpa_supplicant -B -iwlx503eaa362dee -c /etc/wpa_supplicant.conf"
+exec --no-startup-id "/sbin/dhclient wlx503eaa362dee"
+
+
 # Assign
 assign [class="Firefox"] $workspace2
 assign [class="Tor Browser"] $workspace2
