@@ -46,6 +46,8 @@ TEXT
 
   { "full_text" : " ${downspeed wlp2s0}:${totaldown wlp2s0}" ,
         "color" : "\#fb23ff" },
+   { "full_text" : "p${exec /bin/bash ~/.i3/ping.sh}",
+          "color" : "\#00ff00" },
 
  # { "full_text" : "VPN: ${execi 0,1 /bin/bash ~/.i3/check_vpn.sh}" ,
  #        "color" : ${if_match "${execi 0,1 /bin/bash ~/.i3/check_vpn.sh}"=="off"}"\#555555"
@@ -98,7 +100,11 @@ TEXT
                      ${if_match ${time %H} < 6 } "\#ff0000"${else}"\#43f44b"${endif}
                   ${endif} },
 
-  { "full_text" : "V: ${execi 0,1 amixer sget Master | grep -o -E [[:digit:]]+% | head -1 }" ,
+# { "full_text" : "🎧: ${execi 0,1 /home/sah4ez/scripts/airpods }" ,
+#       "color" : ${if_match ${execi 0,1 amixer sget Master | grep -o -E [[:digit:]]+% | head -1 | sed -r s/%//}<35}"\#00ff00"${else}
+#                    ${if_match ${execi 0,1 amixer sget Master | grep -o -E [[:digit:]]+% | head -1 | sed -r s/%//}<60  }"\#ffff00"${else}"\#ff0000"${endif}
+#                 ${endif} },
+  { "full_text" : "🎧: ${execi 0,1 amixer sget Master | grep -o -E [[:digit:]]+% | head -1 }" ,
         "color" : ${if_match ${execi 0,1 amixer sget Master | grep -o -E [[:digit:]]+% | head -1 | sed -r s/%//}<35}"\#00ff00"${else}
                      ${if_match ${execi 0,1 amixer sget Master | grep -o -E [[:digit:]]+% | head -1 | sed -r s/%//}<60  }"\#ffff00"${else}"\#ff0000"${endif}
                   ${endif} },
